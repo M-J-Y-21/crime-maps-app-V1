@@ -110,27 +110,6 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 
-        crimeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-
-            override fun onItemSelected(
-                adapterView: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                Toast.makeText(
-                    this@MainActivity,
-                    "You have selected ${adapterView?.getItemAtPosition(position).toString()}",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-
-        }
-
 
     }
 
