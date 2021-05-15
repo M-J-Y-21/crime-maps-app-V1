@@ -10,7 +10,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.AdapterView
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
@@ -25,6 +28,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.snackbar.Snackbar
 import com.rkpandey.mymaps.models.Place
 import com.rkpandey.mymaps.models.UserMap
+import kotlinx.android.synthetic.main.dialog_create_place.*
 
 private const val TAG = "CreateMapActivity"
 class CreateMapActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -115,6 +119,27 @@ class CreateMapActivity : AppCompatActivity(), OnMapReadyCallback {
             val marker = mMap.addMarker(MarkerOptions().position(latLng).title(title).snippet(description).draggable(true))
             markers.add(marker)
             dialog.dismiss()
+        }
+        val spinner = dialog.findViewById<Spinner>(R.id.crimeSpinner)
+        spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(
+                adapterView: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                Toast.makeText(
+                    this@CreateMapActivity,
+                    "You have selected ${adapterView?.getItemAtPosition(position).toString()}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+
         }
     }
 }
