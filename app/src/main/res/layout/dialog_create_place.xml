@@ -28,4 +28,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/crime_types"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnTakePicture"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="Take Picture Of Crime"
+        android:onClick="takePicture"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_weight="1.0" />
 </LinearLayout>
