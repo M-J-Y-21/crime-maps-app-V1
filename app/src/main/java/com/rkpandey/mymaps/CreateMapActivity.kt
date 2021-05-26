@@ -38,6 +38,7 @@ import com.rkpandey.mymaps.models.Place
 import com.rkpandey.mymaps.models.UserMap
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_create_place.*
+import kotlinx.android.synthetic.main.dialog_create_place.view.*
 import java.io.File
 
 private const val TAG = "CreateMapActivity"
@@ -241,7 +242,7 @@ class CreateMapActivity : AppCompatActivity(), OnMapReadyCallback {
                 .setPositiveButton("OK", null)
                 .show()
 
-        btnTakePicture.setOnClickListener {
+        placeFormView.btnTakePicture.setOnClickListener {
             val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             photoFile = getPhotoFile(FILE_NAME)
 
